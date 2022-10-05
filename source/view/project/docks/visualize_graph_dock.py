@@ -4,7 +4,7 @@ import matplotlib
 import networkx as nx
 from matplotlib.backends.backend_qt5agg import FigureCanvasQTAgg
 from matplotlib.figure import Figure
-from netgraph import EditableGraph
+from netgraph import InteractiveGraph
 import numpy as np
 from PyQt5.QtCore import Qt
 matplotlib.use("Qt5Agg")
@@ -45,7 +45,7 @@ class MplCanvas(FigureCanvasQTAgg):
         self.plot_instance = ResizableGraph(graph, scale=(2, 1), ax=self.ax)
 
 
-class ResizableGraph(EditableGraph):
+class ResizableGraph(InteractiveGraph):
 
     def __init__(self, *args, **kwargs):
         super().__init__(*args, **kwargs)
